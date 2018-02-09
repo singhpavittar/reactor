@@ -11,3 +11,9 @@
 * pm2 development
 * express
 * Different configuration(i.e Local, Staging, Production etc.)
+
+### Coming Soon
+* Bootstrap (React & Jquery)
+* Session Management
+* Different File Loading(i.e. .png, .jpg, .jpeg, .svg etc)
+
