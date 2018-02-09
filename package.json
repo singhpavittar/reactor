@@ -1,0 +1,34 @@
+{
+  "name": "reactor",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.17.1",
+    "compression": "^1.7.1",
+    "express": "^4.16.2",
+    "history": "^4.7.2",
+    "morgan": "^1.9.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "react-scripts": "1.1.0",
+    "redux": "^3.7.2",
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "start": "REACT_APP_ENV=stag react-scripts start",
+    "start:stag": "REACT_APP_ENV=stag react-scripts start",
+    "start:prod": "REACT_APP_ENV=prod react-scripts start",
+    "start:local": "REACT_APP_ENV=local react-scripts start",
+    "build": "REACT_APP_ENV=stag react-scripts build",
+    "build:stag": "REACT_APP_ENV=stag react-scripts build",
+    "build:prod": "REACT_APP_ENV=prod react-scripts build",
+    "build:local": "REACT_APP_ENV=local react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject_app": "react-scripts eject"
+  }
+}
