@@ -6,7 +6,7 @@ import {mapStateToProps,mapDispatchToProps} from './homecontainer';
 class HomePage extends Component {
 
   componentWillMount() {
-    
+
   }
 
   componentWillUnmount() {
@@ -16,7 +16,7 @@ class HomePage extends Component {
   render() {
     return(
       <div>
-        <h2>Count : {this.props.home}</h2>
+        <h2 className="h2-style">Count : {this.props.home}</h2>
         <button type="button" onClick={this.props.increment}>+1</button>
         <button type="button" onClick={this.props.decrement}>-1</button>
         <button type="button" onClick={this.props.resetcounter}>Reset</button>
