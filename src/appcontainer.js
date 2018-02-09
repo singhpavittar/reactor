@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
-import App from './components/routes/app'
+import App from './components/app'
 
 class Appcontainer extends Component {
   render() {

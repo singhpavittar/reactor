@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { Switch, NavLink, Route } from 'react-router-dom';
-
-import Home from './home/homepage'
-import About from './about/aboutpage'
-import Error from './error/errorpage'
+import { NavLink} from 'react-router-dom';
+import Routes from './routes/routes'
 
 class App extends Component {
   render() {
@@ -16,11 +13,7 @@ class App extends Component {
           {' | '}
           <NavLink to="/404" >404</NavLink>
         </div>
-        <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route path="/about" component={About}/>
-          <Route component={Error} />
-        </Switch>
+        <Routes />
       </div>
     );
   }
