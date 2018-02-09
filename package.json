@@ -20,12 +20,13 @@
     "redux": "^3.7.2",
     "redux-immutable-state-invariant": "^2.1.0",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "source-map-explorer": "^1.5.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "start-js" : "react-scripts start",
+    "start-js": "react-scripts start",
     "start": "REACT_APP_ENV=stag npm-run-all -p watch-css start-js",
     "start:stag": "REACT_APP_ENV=stag npm-run-all -p watch-css start-js",
     "start:prod": "REACT_APP_ENV=prod npm-run-all -p watch-css start-js",
@@ -35,6 +36,9 @@
     "build:stag": "REACT_APP_ENV=stag npm-run-all build-css build-js",
     "build:prod": "REACT_APP_ENV=prod npm-run-all build-css build-js",
     "build:local": "REACT_APP_ENV=local npm-run-all build-css build-js",
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "analyzebuild" : "npm-run-all build analyze",
+
     "test": "react-scripts test --env=jsdom",
     "eject_app": "react-scripts eject"
   }

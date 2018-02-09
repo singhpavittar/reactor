@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PT from 'prop-types';
+import PT from 'prop-types'
 import {mapStateToProps,mapDispatchToProps} from './homecontainer';
 
 class HomePage extends Component {
