@@ -1,19 +1,19 @@
 import CONST from './constants';
 
 const STAG_ENV = {
-  APP_NAME : 'Staging Reactor'
+  REQ_RES_API : 'https://reqres.in/api/'
 };
 
 const PROD_ENV = {
-  APP_NAME : 'Production Reactor'
+  REQ_RES_API : 'https://reqres.in/api/'
 };
 
 const LOCAL_ENV = {
-  APP_NAME : 'Local Reactor'
+  REQ_RES_API : 'https://reqres.in/api/'
 };
 
 const COMMON_ENV = {
-  common : {}
+  // Add here if there is any `COMMON ENVIRONMENT VARIABLES`
 };
 
 let app_env = process.env.REACT_APP_ENV;

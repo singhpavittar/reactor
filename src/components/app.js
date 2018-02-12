@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import { NavLink} from 'react-router-dom';
 import Routes from './routes/routes'
+import Header from './common/header/headerview';
 
 class App extends Component {
   render() {
+    const {store , history} = this.props;
     return (
       <div>
-        <div>
-          <NavLink exact to="/" >Home</NavLink>
-          {' | '}
-          <NavLink to="/about" >About</NavLink>
-          {' | '}
-          <NavLink to="/404" >404</NavLink>
-        </div>
+        <Header store={store} history={history}/>
         <Routes />
       </div>
     );

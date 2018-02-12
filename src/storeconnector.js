@@ -9,7 +9,7 @@ class Storeconnector extends Component {
     return (
       <Provider store={store}>
         <Router history={history}>
-          <App/>
+          <App store={store} history={history}/>
         </Router>
       </Provider>
     );
