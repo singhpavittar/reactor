@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style/main.css';
-import Appcontainer from './appcontainer';
+import Storeconnector from './storeconnector';
 
 // TODO: // import registerServiceWorker from './registerServiceWorker';
 
@@ -9,6 +9,6 @@ import store, { history } from './store/configstore';
 
 const rootElement = document.getElementById('root');
 
-ReactDOM.render(<Appcontainer store={store} history={history}/>, rootElement);
+ReactDOM.render(<Storeconnector store={store} history={history}/>, rootElement);
 
 // TODO:  // registerServiceWorker();

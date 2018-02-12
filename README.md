@@ -13,7 +13,7 @@
 * Different configuration(i.e Local, Staging, Production etc.)
 
 ### Coming Soon
+* Server Side Rendring
 * Bootstrap (React & Jquery)
 * Session Management
 * Different File Loading(i.e. .png, .jpg, .jpeg, .svg etc)
-

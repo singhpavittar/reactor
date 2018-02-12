@@ -1,5 +1,3 @@
-'use strict';
-
 const compression = require('compression');
 const express = require('express');
 const morgan = require('morgan');

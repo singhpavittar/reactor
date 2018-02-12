@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import App from './components/app'
 
-class Appcontainer extends Component {
+class Storeconnector extends Component {
   render() {
     const {store, history } = this.props;
     return (
@@ -16,4 +16,4 @@ class Appcontainer extends Component {
   }
 }
 
-export default Appcontainer;
+export default Storeconnector;

@@ -13,15 +13,14 @@ const LOCAL_ENV = {
 };
 
 const COMMON_ENV = {
-  tech : ['React', 'Redux', 'React Router 4']
+  common : {}
 };
 
-let env = process.env.REACT_APP_ENV;
+let app_env = process.env.REACT_APP_ENV;
 
-console.log(env);
 let ENV = {};
 
-switch(env) {
+switch(app_env) {
   case CONST.ENV_TYPES.PROD:
     ENV = {...PROD_ENV, ...COMMON_ENV};
     break;
@@ -34,7 +33,7 @@ switch(env) {
     ENV = {...LOCAL_ENV, ...COMMON_ENV};
     break;
 
-  default :
+  default:
     ENV = {...STAG_ENV, ...COMMON_ENV};
     break;
 }

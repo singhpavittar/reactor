@@ -11,7 +11,7 @@ const RESET_COUNTER = "RESET_COUNTER";
 // ====================================
 
 // Increment
-export const increment = () => {
+const increment = () => {
   return {
     type : INCREMENT,
     payload : 1
@@ -19,15 +19,15 @@ export const increment = () => {
 };
 
 // Decrement
-export const decrement = () => {
+const decrement = () => {
   return {
     type : DECREMENT,
     payload : -1
   };
 };
 
-// Decrement
-export const resetcounter = () => {
+// Reset counter
+const resetcounter = () => {
   return {
     type : RESET_COUNTER
   };
