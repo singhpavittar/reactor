@@ -3,6 +3,6 @@ import ENV from '../../../constants/config';
 
 let loginService = {}
 
-loginService.login = (payload) => axios.post(ENV.REQ_RES_API + 'login',payload);
+loginService.login = (payload) => axios.post(ENV.BASE_URL + 'login',payload);
 
 export default loginService;

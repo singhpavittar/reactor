@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PT from 'prop-types'
 import {mapStateToProps,mapDispatchToProps} from './homecontainer';
+import homeService from './homeservice';
 
 class HomePage extends Component {
 
   componentWillMount() {
-
+    homeService.getDetails()
+    .then(res => {
+      console.log(res);
+    })
   }
 
   componentWillUnmount() {

@@ -1,15 +1,15 @@
 import CONST from './constants';
 
 const STAG_ENV = {
-  REQ_RES_API : 'https://reqres.in/api/'
+  BASE_URL : 'https://reqres.in/api/'
 };
 
 const PROD_ENV = {
-  REQ_RES_API : 'https://reqres.in/api/'
+  BASE_URL : 'https://reqres.in/api/'
 };
 
 const LOCAL_ENV = {
-  REQ_RES_API : 'https://reqres.in/api/'
+  BASE_URL : 'https://reqres.in/api/'
 };
 
 const COMMON_ENV = {

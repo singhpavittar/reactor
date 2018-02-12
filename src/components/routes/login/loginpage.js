@@ -16,7 +16,7 @@ class LoginPage extends Component {
   }
 
   componentWillMount() {
-    // console.log(this.props.history);
+    
   }
 
   componentWillUnmount() {
