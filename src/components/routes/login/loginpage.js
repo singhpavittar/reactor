@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PT from 'prop-types'//eslint-disable-line
+import {Helmet} from 'react-helmet';
 import {mapStateToProps, mapDispatchToProps} from './logincontainer';
 import loginService from './loginservice';
 
@@ -16,7 +17,7 @@ class LoginPage extends Component {
   }
 
   componentWillMount() {
-    
+
   }
 
   componentWillUnmount() {
@@ -42,6 +43,9 @@ class LoginPage extends Component {
   render() {
     return(
       <div>
+        <Helmet id="login">
+          <title>Reactor | Login</title>
+        </Helmet>
         <label>Email</label><br/>
         <input type="email" name="email" value={this.state.email} palceholder="Enter Email Address" onChange={this.handleFormChange}/><br/>
         <label>Password</label><br/>

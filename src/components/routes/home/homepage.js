@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PT from 'prop-types'
+import {Helmet} from 'react-helmet';
 import {mapStateToProps,mapDispatchToProps} from './homecontainer';
 import homeService from './homeservice';
 
@@ -20,6 +21,9 @@ class HomePage extends Component {
   render() {
     return(
       <div>
+        <Helmet id="login">
+          <title>Reactor | Home</title>
+        </Helmet>
         <h2 className="h2-style">Count : {this.props.home}</h2>
         <button type="button" onClick={this.props.increment}>+1</button>
         <button type="button" onClick={this.props.decrement}>-1</button>
