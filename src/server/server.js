@@ -1,58 +1,52 @@
-import Express from 'express'
-import React from 'react'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import reducers from '../components/routes/rootreducer'
-import App from '../components/app'
-import { renderToString } from 'react-dom/server'
+import bodyParser from 'body-parser';
+import compression from 'compression';
+import express from 'express';
+import morgan from 'morgan';
+import path from 'path';
 
-const app = Express()
-const port = 3000
+import index from './routes-index';
+import api from './routes-api';
+import universalLoader from './universal';
 
-//Serve static files
-app.use('/static', Express.static('static'))
+// Create our express app (using the port optionally specified)
+const app = express();
+const PORT = process.env.PORT || 9000;
 
-// This is fired every time the server side receives a request
-app.use(handleRender)
+// Compress, parse, and log
+app.use(compression());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(morgan('dev'));
 
-// We are going to fill these out in the sections to follow
-function handleRender(req, res) {
-  // Create a new Redux Store instance
-  const store = createStore(reducers);
+// Set up route handling, include static assets and an optional API
+app.use('/', index);
+app.use(express.static(path.resolve(__dirname, '../build')));
+app.use('/api', api);
+app.use('/', universalLoader);
 
-  //Render the component to a String
-  const html = renderToString(
-    <Provider>
-      <App/>
-    </Provider>
-  )
+// Let's rock
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}!`);
+});
 
-  // Grab the initial State from Redux Store
-  const preloadedState = store.getState();
+// Handle the bugs somehow
+app.on('error', error => {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
 
-  // send the rendered page back to the client
-  res.send(renderFullPage(html,preloadedState));
+  const bind = typeof PORT === 'string' ? 'Pipe ' + PORT : 'Port ' + PORT;
 
-}
-
-function renderFullPage(html, preloadedState) {
-    return  `
-    <!doctype html>
-    <html>
-      <head>
-        <title>Redux Universal Example</title>
-      </head>
-      <body>
-        <div id="root">${html}</div>
-        <script>
-          // WARNING: See the following for security issues around embedding JSON in HTML:
-          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations
-          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
-        </script>
-        <script src="/static/bundle.js"></script>
-      </body>
-    </html>
-    `;
-}
-
-app.listen(port)
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+});
