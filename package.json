@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
     "axios": "^0.17.1",
     "compression": "^1.7.1",
     "express": "^4.16.2",
@@ -19,7 +21,7 @@
     "react-redux": "^5.0.5",
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
-    "react-router-redux": "^4.0.8",
+    "react-router-redux": "^5.0.0-alpha.6",
     "react-scripts": "1.1.0",
     "redux": "^3.7.2",
     "redux-immutable-state-invariant": "^2.1.0",
@@ -41,6 +43,7 @@
     "build:prod": "REACT_APP_ENV=prod npm-run-all build-css build-js",
     "build:local": "REACT_APP_ENV=local npm-run-all build-css build-js",
     "analyze": "source-map-explorer build/static/js/main.*",
+    "serve": "NODE_ENV=development node server/index.js",
     "analyzebuild": "npm-run-all build analyze",
     "test": "react-scripts test --env=jsdom",
     "eject_app": "react-scripts eject"

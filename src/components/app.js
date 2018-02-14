@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 
-import Routes from './routes/routes'
+import { routes } from './routes/routes'
 import Header from './common/header/headerview';
+import { renderRoutes } from 'react-router-config';
+
 
 class App extends Component {
   render() {
     const {store , history} = this.props;
     return (
       <div>
+        <h2>Reactor is reacting now...</h2>
         <Header store={store} history={history}/>
-        <Routes />
+         {renderRoutes(routes)}
       </div>
     );
   }

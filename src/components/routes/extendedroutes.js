@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
 
-const isLoggedIn = () => localStorage.getItem('accessToken') ? true : false;
+const isLoggedIn = () => true;
 
 export const PrivateRoute = ({component : Component, ...rest}) =>  (
   <Route {...rest} render={(props) => (
