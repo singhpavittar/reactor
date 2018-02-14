@@ -1,9 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
-import { PrivateRoute , AuthentionRoute } from './extendedroutes';
 
+import { PrivateRoute , AuthentionRoute } from './extendedroutes';
 import Loading from '../../components/common/loadingcomponent';
+
 const Login = Loadable({loader : () => import('./login/loginpage'),loading : Loading});
 const Home = Loadable({loader : () => import('./home/homepage'),loading : Loading});
 const About = Loadable({loader : () => import('./about/aboutpage'),loading : Loading});

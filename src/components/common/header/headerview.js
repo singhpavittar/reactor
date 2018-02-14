@@ -10,7 +10,7 @@ class Header extends Component {
   }
 
   componentWillMount(){
-    
+
   }
 
   logout(){
@@ -30,7 +30,7 @@ class Header extends Component {
         {isLoggedIn() ? <span>
           {' | Welcome! '}
           <button type="button" onClick={this.logout}>Logout</button>
-        </span> : <NavLink to="/login" >{' | '} login</NavLink>}
+        </span> : <NavLink to="/login" >{' | '} login </NavLink>}
       </div>
     )
   }
