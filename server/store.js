@@ -4,10 +4,10 @@ import thunk from 'redux-thunk';
 
 import createHistory from 'history/createMemoryHistory';
 import rootReducer from '../src/components/routes/rootreducer';
+import initialState from '../src/store/initialstate';
 
 // Create a store and history based on a path
 const createServerStore = (path = '/') => {
-  const initialState = {};
 
   // We don't have a DOM, so let's create some fake history and push the current path
   const history = createHistory({ initialEntries: [path] });

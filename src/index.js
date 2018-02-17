@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router-dom';
+import { Router ,Route } from 'react-router-dom';
 
 import App from './components/app'
 import './style/main.css';
@@ -13,7 +13,7 @@ const rootElement = document.getElementById('root');
 const Inject = () => (
   <Provider store={store}>
     <Router history={history}>
-      <App store={store} history={history}/>
+      <Route component={App}/>
     </Router>
   </Provider>
 )

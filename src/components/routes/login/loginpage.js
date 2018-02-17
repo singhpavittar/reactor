@@ -29,6 +29,7 @@ class LoginPage extends Component {
     let that = this;
     loginService.login(this.state).then(res => {
       that.props.login(res.data.token);
+      
       localStorage.setItem('accessToken', res.data.token);
       that.setState({email : '', password : ''});
       that.props.history.push('/');

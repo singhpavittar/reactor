@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
-import { routes } from './routes/routes'
+import Routes from './routes/routes'
 import Header from './common/header/headerview';
-import { renderRoutes } from 'react-router-config';
-
 
 class App extends Component {
   render() {
@@ -12,7 +10,7 @@ class App extends Component {
       <div>
         <h2>Reactor is reacting now...</h2>
         <Header store={store} history={history}/>
-         {renderRoutes(routes)}
+        <Routes />
       </div>
     );
   }
