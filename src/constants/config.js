@@ -1,14 +1,17 @@
 import CONST from './constants';
 
 const STAG_ENV = {
+  URL : 'http://reactor.imabhi.in',
   BASE_URL : 'https://reqres.in/api/'
 };
 
 const PROD_ENV = {
+  URL : 'http://reactor.imabhi.in',
   BASE_URL : 'https://reqres.in/api/'
 };
 
 const LOCAL_ENV = {
+  URL : 'http://localhost:3000',
   BASE_URL : 'https://reqres.in/api/'
 };
 

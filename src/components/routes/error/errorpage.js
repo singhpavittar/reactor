@@ -1,10 +1,13 @@
 import React from 'react';
 
+import Page from '../../common/page/page';
+import META from '../../../constants/meta';
+
 const Error = (props) => (
-  <div>
+  <Page {...META.error}>
     <h1>Error</h1>
     <p>404</p>
-  </div>
+  </Page>
 )
 
 export default Error;
