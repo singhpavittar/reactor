@@ -1,11 +1,13 @@
 import axios from 'axios';
 import qs from 'query-string';
-import {history} from '../store/configstore';
 import ENV from '../constants/config';
+// import {history } from '../store/configstore';
 
 // FETCH accessToken FROM Localstorage
 // It can be a function
-const at = localStorage.getItem('accessToken');
+// let browserStorage = (typeof localStorage === 'undefined') ? null : localStorage;
+
+// const at = browserStorage.getItem('accessToken');
 
 const Axios = (baseURL) => {
   // AXIOS CONFIGRATION
@@ -22,7 +24,7 @@ const Axios = (baseURL) => {
 
   // REQUEST INTERCEPTOR
   axiosInstance.interceptors.request.use((config) => {
-    config.headers['accessToken'] = at || null;
+    config.headers['accessToken'] =  null;
     return config;
   }, (error) => {
     return Promise.reject(error);
@@ -31,8 +33,8 @@ const Axios = (baseURL) => {
   // RESPONSE INTERCEPTOR
   axiosInstance.interceptors.response.use((response) => {
     if (4000 === response.data.status) { // RESPONSE_CODE CAN BE CAHNGE
-      localStorage.removeItem('accessToken');
-      history.push('/login');
+      // browserStorage.removeItem('accessToken');
+      // history.push('/login'); /* eslint-disable-line */
     }
     return response;
   }, (error) => {

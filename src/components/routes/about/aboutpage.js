@@ -1,10 +1,13 @@
 import React from 'react'
 
+import Page from '../../common/page/page';
+import META from '../../../constants/meta';
+
 const About = props => (
-  <div>
+  <Page {...META.about}>
     <h1>About</h1>
     <p>Welcome About Page!</p>
-  </div>
+  </Page>
 )
 
 export default About

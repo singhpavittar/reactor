@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PT from 'prop-types'
-import {Helmet} from 'react-helmet';
 import {mapStateToProps,mapDispatchToProps} from './homecontainer';
+
 import homeService from './homeservice';
+import CONST from '../../../constants/assets';
+import Page from '../../common/page/page';
+import META from '../../../constants/meta';
 
 class HomePage extends Component {
+  constructor(props){
+    super(props)
+    this.state = {};
+  }
 
   componentWillMount() {
+
+  }
+
+  compoentDidMount(){
+    this.props.decrement();
     homeService.getDetails()
     .then(res => {
-      console.log(res);
+      this.setState({list :res.data.data });
     })
   }
 
@@ -20,15 +32,14 @@ class HomePage extends Component {
 
   render() {
     return(
-      <div>
-        <Helmet id="login">
-          <title>Reactor | Home</title>
-        </Helmet>
+      <Page {...META.home}>
+        {this.state.list && <h1>list length : {this.state.list.length}</h1>}
+        <img src={CONST.LOGO} alt="logo"/>
         <h2 className="h2-style">Count : {this.props.home}</h2>
         <button type="button" onClick={this.props.increment}>+1</button>
         <button type="button" onClick={this.props.decrement}>-1</button>
         <button type="button" onClick={this.props.resetcounter}>Reset</button>
-      </div>
+      </Page>
     );
   }
 }
